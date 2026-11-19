@@ -2,7 +2,7 @@
 
 # Jev builds
 
-Working builds on Jev, the decision model made by [TypeSafe](https://typesafe.ai), by engineers who build with [Eventum](https://www.eventum.ai). A decision model answers a narrow question with a typed judgment and a probability, and writes no text. Each build here puts Jev on one real decision and measures it against another way of doing the same job.
+Working builds on Jev, the System One model made by [TypeSafe](https://typesafe.ai), by engineers who build with [Eventum](https://www.eventum.ai). A System One model makes fast, narrow judgments: it answers one question with a typed answer and a probability, and writes no text. Jev makes the judgments and code makes the decision. Each build here puts Jev on one real decision and measures it against another way of doing the same job.
 
 Eventum is an official technology partner of TypeSafe and has run Jev in its own systems since before its public launch.
 
@@ -16,7 +16,7 @@ Newest first. Every figure is the builder's own measurement.
 
 A search that treats a long PDF's own table of contents as a tree. Jev ranks the sections, checks the pages in the most promising one, and stops when it judges that nothing the question needs is missing.
 
-- **What Jev decides:** which section to open next, whether a page states evidence the question needs, and whether anything is still missing.
+- **What Jev judges:** which section is most likely to hold the answer, whether a page states evidence the question needs, and whether anything is still missing. Python code walks the contents and decides when to stop.
 - **Result:** returned pages that support the correct answer in 59 of 60 runs, at about 13x lower cost and 2.6x the speed of OpenAI's gpt-6.1-sol walking the same contents. Jev checking every page and the OpenAI model both scored 60 of 60.
 - **Tested:** Jev 1.13.0, 10 November 2026, 20 questions over 4 PDFs, 3 runs each.
 - **Built by:** [Gassyr Bakubay](https://www.eventum.ai/preview/engineers/gassyr-bakubay)
@@ -27,7 +27,7 @@ A search that treats a long PDF's own table of contents as a tree. Jev ranks the
 
 RVC, a job board for remote work, labels each new posting as worldwide remote, remote in one country, hybrid or on-site. Jev was tested on that label against Claude Haiku 5.5.
 
-- **What Jev decides:** which work arrangement a job posting describes, in one question per posting.
+- **What Jev judges:** which work arrangement a job posting describes, in one question per posting.
 - **Result:** 97.1% accuracy against 94.5% for Claude Haiku 5.5 with reasoning, which the builder calls a tie, with Jev about 50x faster and about 6x cheaper per posting.
 - **Tested:** Jev 1.14, October 2026, 200 postings from RVC.
 - **Built by:** [Dmitry Ivanov](https://www.eventum.ai/preview/engineers/dmitry-ivanov)
@@ -41,4 +41,4 @@ RVC, a job board for remote work, labels each new posting as worldwide remote, r
 
 ## Have a decision like one of these?
 
-Eventum is an AI engineering consultancy that builds production AI systems. Decision models like Jev are part of that work. [Book a call](https://www.eventum.ai/book-a-call).
+Eventum is an AI engineering consultancy that builds production AI systems. Systems built on Jev's judgments are part of that work. [Book a call](https://www.eventum.ai/book-a-call).

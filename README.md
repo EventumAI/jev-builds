@@ -2,7 +2,9 @@
 
 # Jev builds
 
-Working builds on Jev, the System One model made by [TypeSafe](https://typesafe.ai), by engineers who build with [Eventum](https://www.eventum.ai). A System One model makes fast, narrow judgments: it answers one question with a typed answer and a probability, and writes no text. Jev makes the judgments and code makes the decision. Each build here puts Jev on one real decision and measures it against another way of doing the same job.
+Decision model builds by engineers who build with [Eventum](https://www.eventum.ai). Each one puts Jev, the System One model made by [TypeSafe](https://typesafe.ai), on one real decision and measures it against another way of doing the same job.
+
+Decision models, which TypeSafe calls System One models, answer one narrow question with a typed answer and a probability, and write no text. Jev makes the judgments and code makes the decision. TypeSafe explains its name for the class in [Don't Call It a Decision Model](https://typesafe.ai/blog/dont-call-it-a-decision-model).
 
 Eventum is an official technology partner of TypeSafe and has run Jev in its own systems since before its public launch.
 
@@ -41,4 +43,4 @@ RVC, a job board for remote work, labels each new posting as worldwide remote, r
 
 ## Have a decision like one of these?
 
-Eventum is an AI engineering consultancy that builds production AI systems. Systems built on Jev's judgments are part of that work. [Book a call](https://www.eventum.ai/book-a-call).
+Eventum is an AI engineering consultancy that builds production AI systems. Putting decision models into production is part of that work. [Book a call](https://www.eventum.ai/book-a-call).

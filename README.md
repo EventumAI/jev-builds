@@ -14,6 +14,28 @@ This repository is an index. Where a build's code is published, it lives in the 
 
 Newest first. Every figure is the builder's own measurement.
 
+### Jev decides which contract clauses an expensive model never has to read
+
+Jev reads every clause of 53 license agreements against six rules. A clause it rejects on all six is skipped and never reaches the expensive model. The loss is counted against the provisions lawyers marked in CUAD.
+
+- **What Jev judges:** six yes-or-no questions per clause, one per rule, in a single request. Code skips a clause only when all six probabilities are below the cutoff.
+- **Result:** with the cutoff aimed at losing 1% of marked provisions, 31.5% of clauses skipped and 4 of 378 provisions lost (1.1%). The expensive model was not run, so the saving is an estimate. Depending on which half of the documents set the cutoff, the skipped share moved from 14.6% to 51.0%.
+- **Tested:** Jev 1.14.0, 13 November 2026, 53 agreements, 3,246 clauses.
+- **Built by:** [Mukammed Alimbet](https://www.eventum.ai/preview/engineers/mukammed-alimbet)
+- **Code:** [MuhammedTech/clause-classification-with-jev](https://github.com/MuhammedTech/clause-classification-with-jev) (no license yet)
+- **Write-up:** [the build page](https://www.eventum.ai/preview/jev-builds/contract-clause-filter), with the method and the limits
+
+### Jev routes each message in a booking assistant, against two Gemini models
+
+An assistant for finding accommodation first decides what each message is: a new search, a change to the search, a question about a listing, or general chat. Jev was added as an alternative to the Gemini router.
+
+- **What Jev judges:** which of four actions a message calls for, in one question per message.
+- **Result:** 77 of 81 held-out cases routed to the right action, the same as Gemini 2.5 Flash, with 1 critical error against 2, at an estimated $0.09 against $1.76 per 1,000 requests.
+- **Tested:** Jev 1.14.0, results sent 12 November 2026, 81 held-out cases from synthetic conversations.
+- **Built by:** Leyla Mehtiyeva
+- **Code:** not published yet. The assistant is at [leylamehtiyeva/booking-ai-system](https://github.com/leylamehtiyeva/booking-ai-system).
+- **Write-up:** [the build page](https://www.eventum.ai/preview/jev-builds/booking-assistant-routing), with the method and the limits
+
 ### Jev walks a PDF's table of contents to find the answer
 
 A search that treats a long PDF's own table of contents as a tree. Jev ranks the sections, checks the pages in the most promising one, and stops when it judges that nothing the question needs is missing.
@@ -24,6 +46,39 @@ A search that treats a long PDF's own table of contents as a tree. Jev ranks the
 - **Built by:** [Gassyr Bakubay](https://www.eventum.ai/preview/engineers/gassyr-bakubay)
 - **Code:** [bakubay/jev-dfs-document-search](https://github.com/bakubay/jev-dfs-document-search) (Apache 2.0)
 - **Write-up:** [the build page](https://www.eventum.ai/preview/jev-builds/pdf-table-of-contents-search), with the comparison, the limits and a 28-second video
+
+### Jev sorts payment fraud alerts into five types, against GPT-4o-mini
+
+Each simulated alert carries one transaction and 19 signals. Jev names the type of fraud and says whether to hold the payment.
+
+- **What Jev judges:** which of five alert types this is, and whether the payment should be held, in one request. Code settles an alert only when the probability of the chosen type is 0.85 or more.
+- **Result:** macro F1 of 0.891, against 0.474 and 0.577 for GPT-4o-mini (answering directly, reasoning first). An analyst's rules scored 0.831 and a model trained on 10,000 alerts 0.960.
+- **Tested:** Jev 1.14.0, 8 November 2026, 500 simulated test alerts.
+- **Built by:** [Anuar Sultan](https://www.eventum.ai/preview/engineers/anuar-sultan)
+- **Code:** [cpipi/fraud-triage-jev](https://github.com/cpipi/fraud-triage-jev) (MIT)
+- **Write-up:** [the build page](https://www.eventum.ai/preview/jev-builds/fraud-alert-triage), with the method and the limits
+
+### Jev beside chat models in an open-source signal benchmark
+
+An open-source server turns market data into a fixed set of options and asks models to choose. Version 2 adds Jev beside chat models. A benchmark, not trading advice.
+
+- **What Jev judges:** which of the offered target levels to pick, and in backtests the probability that the pick reaches its success condition. Code maps the pick to a direction and applies a fixed stop rule.
+- **Result:** 2.21 s per call against 12.35 s for GPT-6 Luna, with the same direction on 96.9% of repeat calls against 62.9%. Its calibration was no better (Brier score 0.263 against 0.214).
+- **Tested:** Jev 1.14, server version 2 released 8 November 2026, 35 test windows of saved market data.
+- **Built by:** Haidar Ali
+- **Code:** [haidarali0/Trading-Signal-Server](https://github.com/haidarali0/Trading-Signal-Server/tree/v2) (no license yet)
+- **Write-up:** [the build page](https://www.eventum.ai/preview/jev-builds/trading-signal-benchmark), with the method and the limits
+
+### Jev decides whether an edited document still supports a stored fact
+
+A memory system stores facts taken from documents. When a document changes, a judge checks whether the new text still supports each fact. Jev was measured alone and as a first pass in front of an LLM judge.
+
+- **What Jev judges:** one question per case with four verdicts: supported, contradicted, unmentioned or cannot tell. Code lets the verdict stand at a confidence of 0.85 or more and sends the rest to the LLM judge.
+- **Result:** Jev decided 37% of cases alone and was right on 91% of them. In front of GPT-6.1 Terra or Claude Sonnet 5.5 that cut cost by 29 to 31% with accuracy within 1 case of 172. In front of GPT-6 Luna the cost was 20% higher.
+- **Tested:** Jev 1.14, 5 and 6 November 2026, 172 hand-labeled cases.
+- **Built by:** [Iurii Dremov](https://www.eventum.ai/preview/engineers/iurii-dremov)
+- **Code:** not published. The builder's code and test cases are private.
+- **Write-up:** [the build page](https://www.eventum.ai/preview/jev-builds/knowledge-drift-judge), with the method and the limits
 
 ### Labeling remote jobs: Jev against Claude Haiku 5.5
 

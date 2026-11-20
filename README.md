@@ -31,7 +31,7 @@ An assistant for finding accommodation first decides what each message is: a new
 
 - **What Jev judges:** which of four actions a message calls for, in one question per message.
 - **Result:** 77 of 81 held-out cases routed to the right action, the same as Gemini 2.5 Flash, with 1 critical error against 2, at an estimated $0.09 against $1.76 per 1,000 requests.
-- **Tested:** Jev 1.14.0, results sent 12 November 2026, 81 held-out cases from synthetic conversations.
+- **Tested:** Jev 1.14.0, results sent 12 November 2026, 81 held-out cases of 139 (112 based on Taskmaster-2, 27 written for specific situations).
 - **Built by:** Leyla Mehtiyeva
 - **Code:** not published yet. The assistant is at [leylamehtiyeva/booking-ai-system](https://github.com/leylamehtiyeva/booking-ai-system).
 - **Write-up:** [the build page](https://www.eventum.ai/preview/jev-builds/booking-assistant-routing), with the method and the limits

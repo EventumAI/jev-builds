@@ -19,7 +19,7 @@ A search that treats a long PDF's own table of contents as a tree. Jev ranks the
 - **What Jev judges:** which section is most likely to hold the answer, whether a page states evidence the question needs, and whether anything is still missing. Python code walks the contents and decides when to stop.
 - **Result:** returned pages that support the correct answer in 59 of 60 runs, at about 13x lower cost and 2.6x the speed of OpenAI's gpt-6.1-sol walking the same contents. Jev checking every page and the OpenAI model both scored 60 of 60.
 - **Tested:** Jev 1.13.0, 10 November 2026, 20 questions over 4 PDFs, 3 runs each.
-- **Built by:** [Gassyr Bakubay](https://www.eventum.ai/engineers/gassyr-bakubay)
+- **Built by:** [Gassyr Bakubay](https://www.eventum.ai/jev-builds/pdf-table-of-contents-search)
 - **Code:** [bakubay/jev-dfs-document-search](https://github.com/bakubay/jev-dfs-document-search) (Apache 2.0)
 - **Write-up:** [the build page](https://www.eventum.ai/jev-builds/pdf-table-of-contents-search), with the comparison, the limits and a 28-second video
 
@@ -30,7 +30,7 @@ Jev reads every clause of 53 license agreements against six rules. A clause it r
 - **What Jev judges:** six yes-or-no questions per clause, one per rule, in a single request. Code skips a clause only when all six probabilities are below the cutoff.
 - **Result:** with the cutoff aimed at losing 1% of marked provisions, 31.5% of clauses skipped and 4 of 378 provisions lost (1.1%). The expensive model was not run, so the saving is an estimate. Depending on which half of the documents set the cutoff, the skipped share moved from 14.6% to 51.0%.
 - **Tested:** Jev 1.14.0, 13 November 2026, 53 agreements, 3,246 clauses.
-- **Built by:** [Mukammed Alimbet](https://www.eventum.ai/engineers/mukammed-alimbet)
+- **Built by:** [Mukammed Alimbet](https://www.eventum.ai/jev-builds/contract-clause-filter)
 - **Code:** [MuhammedTech/clause-classification-with-jev](https://github.com/MuhammedTech/clause-classification-with-jev) (MIT), with [the operating point tables](https://github.com/MuhammedTech/clause-classification-with-jev/blob/main/docs/operating-point.md)
 - **Write-up:** [the build page](https://www.eventum.ai/jev-builds/contract-clause-filter), with the method and the limits
 
@@ -41,7 +41,7 @@ Each simulated alert carries one transaction and 19 signals. Jev names the type 
 - **What Jev judges:** which of five alert types this is, and whether the payment should be held, in one request. Code settles an alert only when the probability of the chosen type is 0.85 or more.
 - **Result:** macro F1 of 0.891, against 0.474 and 0.577 for GPT-4o-mini (answering directly, reasoning first). An analyst's rules scored 0.831 and a model trained on 10,000 alerts 0.960.
 - **Tested:** Jev 1.14.0, 8 November 2026, 500 simulated test alerts.
-- **Built by:** [Anuar Sultan](https://www.eventum.ai/engineers/anuar-sultan)
+- **Built by:** [Anuar Sultan](https://www.eventum.ai/jev-builds/fraud-alert-triage)
 - **Code:** [cpipi/fraud-triage-jev](https://github.com/cpipi/fraud-triage-jev) (MIT)
 - **Write-up:** [the build page](https://www.eventum.ai/jev-builds/fraud-alert-triage), with the method and the limits
 
@@ -63,7 +63,7 @@ A memory system stores facts taken from documents. When a document changes, a ju
 - **What Jev judges:** one question per case with four verdicts: supported, contradicted, unmentioned or cannot tell. Code lets the verdict stand at a confidence of 0.85 or more and sends the rest to the LLM judge.
 - **Result:** Jev decided 37% of cases alone and was right on 91% of them. In front of GPT-6.1 Terra or Claude Sonnet 5.5 that cut cost by 29 to 31% with accuracy within 1 case of 172. In front of GPT-6 Luna the cost was 20% higher.
 - **Tested:** Jev 1.14, 5 and 6 November 2026, 172 hand-labeled cases.
-- **Built by:** [Iurii Dremov](https://www.eventum.ai/engineers/iurii-dremov)
+- **Built by:** [Iurii Dremov](https://www.eventum.ai/jev-builds/knowledge-drift-judge)
 - **Report:** [JEV-DRIFT-CASCADE.md](knowledge-drift-judge/JEV-DRIFT-CASCADE.md), the builder's full report, with [his chart](knowledge-drift-judge/jev-threshold-sweep.png), published here with his permission
 - **Code:** not published. The builder's code and test cases are private.
 - **Write-up:** [the build page](https://www.eventum.ai/jev-builds/knowledge-drift-judge), with the method and the limits

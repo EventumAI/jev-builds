@@ -10,18 +10,7 @@ This repository is an index of the [Jev build log](https://www.eventum.ai/jev-bu
 
 ## The builds
 
-Newest first. Every figure is the builder's own measurement.
-
-### Jev decides which contract clauses an expensive model never has to read
-
-Jev reads every clause of 53 license agreements against six rules. A clause it rejects on all six is skipped and never reaches the expensive model. The loss is counted against the provisions lawyers marked in CUAD.
-
-- **What Jev judges:** six yes-or-no questions per clause, one per rule, in a single request. Code skips a clause only when all six probabilities are below the cutoff.
-- **Result:** with the cutoff aimed at losing 1% of marked provisions, 31.5% of clauses skipped and 4 of 378 provisions lost (1.1%). The expensive model was not run, so the saving is an estimate. Depending on which half of the documents set the cutoff, the skipped share moved from 14.6% to 51.0%.
-- **Tested:** Jev 1.14.0, 13 November 2026, 53 agreements, 3,246 clauses.
-- **Built by:** [Mukammed Alimbet](https://www.eventum.ai/engineers/mukammed-alimbet)
-- **Code:** [MuhammedTech/clause-classification-with-jev](https://github.com/MuhammedTech/clause-classification-with-jev) (MIT), with [the operating point tables](https://github.com/MuhammedTech/clause-classification-with-jev/blob/main/docs/operating-point.md)
-- **Write-up:** [the build page](https://www.eventum.ai/jev-builds/contract-clause-filter), with the method and the limits
+In the order of the build log. Every figure is the builder's own measurement.
 
 ### Jev walks a PDF's table of contents to find the answer
 
@@ -33,6 +22,17 @@ A search that treats a long PDF's own table of contents as a tree. Jev ranks the
 - **Built by:** [Gassyr Bakubay](https://www.eventum.ai/engineers/gassyr-bakubay)
 - **Code:** [bakubay/jev-dfs-document-search](https://github.com/bakubay/jev-dfs-document-search) (Apache 2.0)
 - **Write-up:** [the build page](https://www.eventum.ai/jev-builds/pdf-table-of-contents-search), with the comparison, the limits and a 28-second video
+
+### Jev decides which contract clauses an expensive model never has to read
+
+Jev reads every clause of 53 license agreements against six rules. A clause it rejects on all six is skipped and never reaches the expensive model. The loss is counted against the provisions lawyers marked in CUAD.
+
+- **What Jev judges:** six yes-or-no questions per clause, one per rule, in a single request. Code skips a clause only when all six probabilities are below the cutoff.
+- **Result:** with the cutoff aimed at losing 1% of marked provisions, 31.5% of clauses skipped and 4 of 378 provisions lost (1.1%). The expensive model was not run, so the saving is an estimate. Depending on which half of the documents set the cutoff, the skipped share moved from 14.6% to 51.0%.
+- **Tested:** Jev 1.14.0, 13 November 2026, 53 agreements, 3,246 clauses.
+- **Built by:** [Mukammed Alimbet](https://www.eventum.ai/engineers/mukammed-alimbet)
+- **Code:** [MuhammedTech/clause-classification-with-jev](https://github.com/MuhammedTech/clause-classification-with-jev) (MIT), with [the operating point tables](https://github.com/MuhammedTech/clause-classification-with-jev/blob/main/docs/operating-point.md)
+- **Write-up:** [the build page](https://www.eventum.ai/jev-builds/contract-clause-filter), with the method and the limits
 
 ### Jev sorts payment fraud alerts into five types, against GPT-4o-mini
 

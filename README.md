@@ -4,7 +4,7 @@ Decision model builds by engineers who build with [Eventum](https://www.eventum.
 
 Decision models, which TypeSafe calls System One models, answer one narrow question with a typed answer and a probability, and write no text. Jev makes the judgments and code makes the decision. TypeSafe explains its name for the class in [Don't Call It a Decision Model](https://typesafe.ai/blog/dont-call-it-a-decision-model).
 
-Eventum is an official technology partner of TypeSafe and has run Jev in its own systems since before its public launch.
+Eventum is a TypeSafe implementation partner and has run Jev in its own systems since before its public launch.
 
 This repository is an index of the [Jev build log](https://www.eventum.ai/jev-builds) on Eventum's site. Where a build's code is published, it lives in the builder's own repository, under the builder's name and license.
 
